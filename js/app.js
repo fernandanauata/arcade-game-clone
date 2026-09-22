@@ -31,21 +31,16 @@ var Player = function() {
     this.sprite = 'images/char-boy.png';
 };
 
-Player.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    this.x += this.speed * dt;
-};
+// Player movement is grid-based and driven directly by handleInput's
+// moveLeft/moveRight/moveUp/moveDown calls rather than per-frame
+// interpolation, so there's nothing to advance here on each tick.
+Player.prototype.update = function() {};
 
 // Reset the game when the player collides with a bug or get to the water
 Player.prototype.reset = function() {
     this.x = 200;
     this.y = 400;
 };
-
-// MANTER FUNÇÃO
-Player.prototype.update = function() {};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -79,21 +74,21 @@ Player.prototype.moveDown = function() {
 };
 
 
-Player.prototype.handleInput = function() {
-    switch (event.keyCode) {
-        case 37: // Left
+Player.prototype.handleInput = function(key) {
+    switch (key) {
+        case 'left':
             this.moveLeft();
             break;
 
-        case 38: // Up
+        case 'up':
             this.moveUp();
             break;
 
-        case 39: // Right
+        case 'right':
             this.moveRight();
             break;
 
-        case 40: // Down
+        case 'down':
             this.moveDown();
             break;
     }

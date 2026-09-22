@@ -61,6 +61,15 @@
                 }
             };
 
+            /* Without this, a 404'd or otherwise failed image leaves its
+             * cache entry stuck at `false` forever, so isReady() never
+             * returns true and the game silently never starts. Surface
+             * the failure instead so it's obvious what needs fixing.
+             */
+            img.onerror = function() {
+                console.error('Resources: failed to load image "' + url + '". The game cannot start until this is fixed.');
+            };
+
             /* Set the initial cache value to false, this will change when
              * the image's onload event handler is called. Finally, point
              * the image's src attribute to the passed in URL.

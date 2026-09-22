@@ -23,7 +23,10 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        // Caps dt so a backgrounded/stalled tab can't produce a huge delta
+        // on resume, which would let entities jump past collision checks.
+        MAX_DT = 0.1;
 
     canvas.width = 505;
     canvas.height = 606;
@@ -40,7 +43,7 @@ var Engine = (function(global) {
          * computer is) - hurray time!
          */
         var now = Date.now(),
-            dt = (now - lastTime) / 1000.0;
+            dt = Math.min((now - lastTime) / 1000.0, MAX_DT);
 
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
