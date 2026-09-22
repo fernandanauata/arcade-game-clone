@@ -1,34 +1,72 @@
-# Effective JavaScript: Bug Game
+# Bug Game — Classic Arcade Game Clone
 
-Bug game is a web game and a recriation of the clasic arcade game Frogger! It was made using CSS3, HTML5 and JavaScript.
-
----
-
-## How it works
-
-* You have to get to the water without thouching the bugs.
-* When get to the water, you **win** and the game resets.
+A Frogger-style arcade game built with vanilla JavaScript (ES modules) and
+[Vite](https://vitejs.dev). Originally created for Udacity's Front-End Web
+Developer Nanodegree, then modernized to current web standards.
 
 ---
 
 ## How to play
 
-* Download this project and open the index.html or click this [link](https://www.game.com)
-* To move the character you'll use the arrow keys
-* Do **not** touch the bugs or you'll lose
-* Get to the water to **win**!
+Move the character with the **arrow keys**. Avoid the bugs — each hit costs
+a life. Reach the water to score a point and go again. Run out of lives and
+the game ends; press **Restart** to play again.
 
 ---
 
-## About the Author
+## Getting started
 
-[Fernanda Nauata](https://www.alvesfernanda.com) is a Graphic Designer studying to become a Front-End Developer. 
+```bash
+npm install
+npm run dev
+```
 
-Contact me:
-![Facebook](http://i.imgur.com/X2rINzC.png "Facebook") [Facebook](https://www.facebook.com/allvesfernanda)
-![Linkedin](http://i.imgur.com/IzVvt52.png "Linkedin") [Linkedin](https://www.linkedin/com/fernandanauata)
-![Instagram](http://i.imgur.com/amYiTQ5.png "Instagram") [Instagram](https://instagram.com/allvesfernanda)
-![Twitter](http://i.imgur.com/ggveQdC.png "Twitter") [Twitter](https://twitter.com/allvesfernanda)
-![Email](http://i.imgur.com/hfI8Dqp.png "Email") [Email](ferhcard@gmail.com)
+Then open the local URL Vite prints (typically http://localhost:5173).
 
+### Other scripts
 
+| Command           | What it does                         |
+| ----------------- | ------------------------------------ |
+| `npm run build`   | Production build to `dist/`          |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
+| `npm run format`  | Format the codebase with Prettier    |
+
+---
+
+## Project structure
+
+```
+index.html          Entry HTML (mounts the game + HUD)
+src/
+  main.js            Wires up the player, enemies, engine, and game state
+  engine.js           Game loop, rendering, collision detection
+  gameState.js        Score/lives tracking and UI/aria-live updates
+  config.js           Named constants (tile size, board bounds, etc.)
+  resources.js        Image loading/caching
+  entities/
+    Player.js
+    Enemy.js
+  style.css
+public/
+  images/              Game sprites
+```
+
+---
+
+## About the author
+
+[Fernanda Nauata](https://www.alvesfernanda.com) is a Graphic Designer and
+Front-End Developer.
+
+- [Facebook](https://www.facebook.com/allvesfernanda)
+- [LinkedIn](https://www.linkedin.com/fernandanauata)
+- [Instagram](https://instagram.com/allvesfernanda)
+- [Twitter](https://twitter.com/allvesfernanda)
+- [Email](mailto:ferhcard@gmail.com)
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
