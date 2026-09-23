@@ -1,0 +1,32 @@
+{
+  "name": "arcade-game-clone",
+  "version": "1.0.0",
+  "description": "Classic Arcade Game Clone (Frogger-style), built with vanilla JS and Vite.",
+  "type": "module",
+  "private": true,
+  "author": "Fernanda Nauata",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandanauata/arcade-game-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fernandanauata/arcade-game-clone/issues"
+  },
+  "homepage": "https://github.com/fernandanauata/arcade-game-clone#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.8",
+    "vite": "^8.3.0"
+  }
+}

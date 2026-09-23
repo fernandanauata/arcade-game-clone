@@ -1,0 +1,62 @@
+body {
+  text-align: center;
+  background-color: #ddd;
+  font-family: 'Press Start 2P', sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+header,
+.instructions,
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-instructions {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.hud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 1rem 0;
+}
+
+.hud button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+/* The focusable container Engine appends the canvas into. Sized to the
+   canvas's logical (CSS) dimensions so the focus ring hugs the board. */
+.game-container {
+  display: inline-block;
+  max-width: 100%;
+  outline-offset: 4px;
+}
+
+.game-container:focus-visible {
+  outline: 3px solid #1a73e8;
+}
+
+/* Canvas backing-store resolution is scaled for devicePixelRatio in
+   engine.js; this keeps its on-screen size fluid on narrow viewports
+   while preserving aspect ratio. */
+.game-container canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.game-status {
+  min-height: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+}
